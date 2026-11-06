@@ -1,0 +1,10 @@
+{
+  "total_events": 6,
+  "failed_events": 4,
+  "successful_events": 2,
+  "failures_by_user": {"rahim": 3, "karim": 1},
+  "failed_ips": {"185.20.10.44": 1, "45.116.20.11": 2, "103.92.10.8": 1},
+  "suspicious_event_count": 3,
+  "assessment": "High attention pending validation",
+  "limitations": "Synthetic dataset; this does not prove account compromise."
+}

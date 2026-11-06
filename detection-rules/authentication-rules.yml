@@ -1,0 +1,36 @@
+title: Repeated Failed Logins Followed By Success
+id: lab-auth-001
+status: test
+author: [Your Name]
+description: Detects a synthetic pattern that may indicate brute force or account takeover.
+logsource:
+  product: authentication
+detection:
+  selection_failed:
+    outcome: Failed
+  selection_success:
+    outcome: Success
+  condition: selection_failed and selection_success
+falsepositives:
+  - User forgot a password and then successfully logged in
+  - Shared or roaming network conditions
+level: medium
+
+---
+
+title: New Device Authentication With High Risk Signal
+id: lab-auth-002
+status: test
+author: [Your Name]
+description: Flags authentication from a new device when the event is marked high risk.
+logsource:
+  product: authentication
+detection:
+  selection:
+    device: new
+    risk: high
+  condition: selection
+falsepositives:
+  - Legitimate device replacement
+  - Travel or approved remote access
+level: high
